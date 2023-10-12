@@ -1,11 +1,11 @@
 let budget = 100;
 
-let productprijs = 60
+let product = 60;
 
-let saldo = document.getElementById("Resultaat")
+let saldo = document.getElementById("het overige bedrag")
 
-if (budget => productprijs) {
- let over = budget - productprijs
+if (budget => product) {
+ let over = budget - product
 saldo.innerHTML = "u heeft genoeg geld om het te kopen " + over + "is er over van uw bedrag : " + budget + "euro";
 saldo.style.color = "green";
 }
