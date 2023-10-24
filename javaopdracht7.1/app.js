@@ -1,15 +1,15 @@
-let budget = 100;
+function controleerBudget() {
+    var budget = parseFloat(prompt("Wat is je budget?"));
+    var productPrijs = parseFloat(prompt("Wat is de prijs van het product dat je wilt kopen?"));
+    var resultaatElement = document.getElementById("resultaat");
 
-let product = 60;
-
-let saldo = document.getElementById("het overige bedrag")
-
-if (budget => product) {
- let over = budget - product
-saldo.innerHTML = "u heeft genoeg geld om het te kopen " + over + "is er over van uw bedrag : " + budget + "euro";
-saldo.style.color = "green";
-}
-else {
-    saldo.innerHTML = "u heeft helaas niet genoeg geld op uw saldo";
-    saldo.style.color = "red";
+    if (isNaN(budget) || isNaN(productPrijs)) {
+        resultaatElement.innerHTML = '<p style="color: black;"><strong>Ongeldige invoer. Voer geldige bedragen in.</strong></p>';
+    } else {
+        if (budget >= productPrijs) {
+            resultaatElement.innerHTML = '<p style="color: green;"><strong>U heeft genoeg geld!</strong></p>';
+        } else {
+            resultaatElement.innerHTML = '<p style="color: red;"><strong>Te weinig geld!.</strong></p>';
+        }
+    }
 }
