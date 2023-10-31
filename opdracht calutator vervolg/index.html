@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rekenmachine</title>
+</head>
+
+<body>
+    <div class="index">
+        <h1>Rekenmachine</h1>
+        <input type="text" id="getal1" placeholder="Voer getal 1 in">
+        </select>
+        <input type="text" id="getal2" placeholder="Voer getal 2 in">
+        <button onclick="multiply()">x</button>
+        <button onclick="plus()">+</button>
+        <button onclick="min()">-</button>
+        <button onclick="divide()">/</button>
+        <p id="resultaat"></p>
+    </div>
+
+    <div class="log">
+        <h2>Laatste antwoorden:</h2>
+        <ul id="loglijst"></ul>
+    </div>
+    <button id="knopje" onclick="resetlog()">Reset de Loglijst!</button>
+    <script src="app.js"></script>
+</body>
+
+</html>
