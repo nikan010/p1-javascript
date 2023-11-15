@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Formulier</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-<form action="/action_page.php" onsubmit="return myFunction()">
-    Name (max 10 characters): <input type="text" id="fname" size="20" name="fname"><br>
-    Age (from 1 to 100): <input type="text" id="age" size="20" name="age"><br>
-    E-mail: <input type="text" id="email" size="20" name="mail"><br><br>
-    <input type="submit" value="Submit"> 
+  <form>
+    <label for="product">Product:</label>
+    <input type="text" id="product" name="product">
+    <button type="button" onclick="logValue()">Verzenden</button>
   </form>
+
   <script src="app.js"></script>
 </body>
 </html>
