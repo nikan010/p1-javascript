@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="page">
+        <h1 class="h1-bg">Tafelgenerator</h1>
+    
+        <!-- Voeg een invoerveld toe voor de gebruiker om een getal in te voeren -->
+        <label for="multiplierInput">Voer een getal in:</label>
+        <input type="number" id="multiplierInput" />
+        <button onclick="rekentafel(document.getElementById('multiplierInput').value)">Genereer Tafel</button>
+    
+        <!-- Voeg een container toe waarin de tafel wordt weergegeven -->
+        <div id="table-container"></div>
+    </div>
+        <script src="app.js"></script>
+</body>
+</html>
