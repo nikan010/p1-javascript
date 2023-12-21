@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#body {
+  width: 100%;
+  height: 100%;
+  background-color: lightblue700000;
+  color: white;
+}
+.container { 
+  height: 200px;
+  position: relative;
+  border: 3px solid green; 
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body id="body">
+
+
+
+<button id="show" onclick="myFunction()">Try it</button>
+
+
+<div class="container">
+    <div class="center">
+<button class="button" onclick="change()">click here</button>
+</div>
+</div>
+<script>
+   var showknop = document.getElementById("show")
+function myFunction() {
+  document.getElementById("body").style.backgroundColor = "red";
+  showknop.style.display = "none";
+
+setTimeout(function() {
+    document.getElementById("body").style.backgroundColor = "green";
+  }, 3000);
+}
+function change() {
+    document.getElementById("body").style.backgroundColor = "lightblue";
+    showknop.style.display = "block";
+}
+</script>
+
+</body>
+</html>

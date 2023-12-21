@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reactietijd Spel</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+ 
+    #game-container {
+      text-align: center;
+    }
+ 
+    #start-button, #green-box {
+      width: 200px;
+      height: 200px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+    }
+ 
+    #start-button {
+      background-color: #e74c3c;
+    }
+ 
+    #green-box {
+      display: none;
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <button id="start-button" onclick="startGame()">Go</button>
+    <div id="green-box" onclick="endGame()"></div>
+    <p id="reaction-time"></p>
+    <p id="average-time"></p>
+  </div>
+ 
+  <script>
+    let startTime, endTime, reactionTime, averageTime;
+    let gameActive = false;
+ 
+    function startGame() {
+      if (!gameActive) {
+        gameActive = true;
+ 
+        document.getElementById('start-button').style.display = 'none';
+        document.getElementById('green-box').style.display = 'block';
+        document.getElementById('green-box').style.backgroundColor = '#e74c3c'; // Change to red
+        setTimeout(changeToGreen, Math.floor(Math.random() * 10000) + 1); // Random time between 1ms and 10000ms
+      }
+    }
+ 
+    function changeToGreen() {
+      document.getElementById('green-box').style.backgroundColor = '#2ecc71'; // Change to green
+      startTime = new Date();
+    }
+ 
+    function endGame() {
+      if (gameActive) {
+        gameActive = false;
+        endTime = new Date();
+        reactionTime = endTime - startTime;
+ 
+        document.getElementById('reaction-time').innerText = `Your reaction time: ${reactionTime} ms`;
+ 
+        document.getElementById('start-button').style.display = 'block';
+        document.getElementById('green-box').style.display = 'none';
+ 
+        updateAverageTime();
+      }
+    }
+ 
+    function updateAverageTime() {
+      if (!averageTime) {
+        averageTime = reactionTime;
+      } else {
+        averageTime = (averageTime + reactionTime) / 2;
+      }
+ 
+      document.getElementById('average-time').innerText = `Average reaction time: ${averageTime.toFixed(2)} ms`;
+    }
+  </script>
+</body>
+</html>
