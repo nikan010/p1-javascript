@@ -9,6 +9,7 @@ const snakeColor = "lightgreen";
 const snakeBorder = "black";
 const foodColor = "red";
 const unitSize = 25;
+
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
