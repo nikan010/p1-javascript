@@ -1,27 +1,54 @@
+let scoreAanwezig = 0;
+let scoreAfwezig = 0;
+
 // Initialiseer de score
-let scoreaanwezig = 0;
-let scoreafwezig = 0;
-var resultaatafwezig;
-var resultaataanwezig;
-var totaaldagen;
+const aanwezigButton = document.getElementById('aanwezigknop');
+const afwezigButton = document.getElementById('afwezigknop');
+const scoreAanwezigElement = document.getElementById('scoreAanwezig');
+const scoreAfwezigElement = document.getElementById('scoreAfwezig');
+const percentageAanwezigElement = document.getElementById('percentageAanwezig');
+const percentageAfwezigElement = document.getElementById('percentageAfwezig');
 // Selecteer de elementen
 
-const aanwezig = document.getElementById('aanwezig');
-const afwezig = document.getElementById('afwezig');
 
-// Voeg een event listener toe voor de klik op de knop
-if (conclick(aanwezig)){
-    // Verhoog de score
-    scoreaanwezig++;
-    
-};
-if (conclick(afwezig)){
-    // Verhoog de score
-    scoreafwezig++;
-    
-};
+function aantalaanwezigheid(){
+    scoreAanwezig++;
+    scoreAanwezigElement.textContent = 'aantalaanwezigheidsdagen: ' + scoreAanwezig;
+  
+}
 
-var totaaldagen = afwezig + aanwezig;
-var resultaatafwezig = afwezig / totaaldagen * 100;
-var resultaatafwezig = aanwezig / totaaldagen * 100;
 
+function aantalaanwezigheid(){
+    scoreAfwezig++;
+    scoreAanwezigElement.textContent = 'aantalafwezigheidsdagen: ' + scoreAfwezig;
+ 
+}
+
+
+
+/*
+
+//ai generated
+// Selecteer de elementen
+
+
+
+// Functie om percentages bij te werken
+function updatePercentages() {
+    // Totaal aantal dagen (aanwezig + afwezig)
+    const totaalDagen = scoreAanwezig + scoreAfwezig;
+
+    if (totaalDagen > 0) {
+        const percentageAanwezig = (scoreAanwezig / totaalDagen) * 100;
+        const percentageAfwezig = (scoreAfwezig / totaalDagen) * 100;
+
+        // Update de percentages
+        percentageAanwezigElement.textContent = 'Aanwezig percentage: ' + percentageAanwezig.toFixed(2) + '%';
+        percentageAfwezigElement.textContent = 'Afwezig percentage: ' + percentageAfwezig.toFixed(2) + '%';
+    }
+}
+
+// Voeg event listeners toe voor de knoppen
+afwezigButton.addEventListener('click', verhoogAfwezig);
+aanwezigButton.addEventListener('click', verhoogAanwezig);
+*/
